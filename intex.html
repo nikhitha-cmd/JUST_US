@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Beautiful Recap - 5 Years Together</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --deep-red: #8B0000;
+            --soft-pink: #FFB6C1;
+            --rose: #C75B7A;
+            --beige: #F5E6D3;
+            --cream: #FFF8E7;
+            --dark-text: #2C1810;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--beige) 100%);
+            color: var(--dark-text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        /* Floating Hearts Background */
+        .heart-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 20px;
+            color: var(--soft-pink);
+            opacity: 0;
+            animation: floatHeart 8s infinite ease-in-out;
+        }
+
+        /* Vintage rose petals */
+        .floating-heart.petal {
+            font-size: 16px;
+            animation: floatPetal 10s infinite ease-in-out;
+        }
+
+        @keyframes floatPetal {
+            0% {
+                transform: translateY(-100px) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(50vh) translateX(30px) rotate(180deg);
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh) translateX(-20px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Vintage Film Grain Overlay */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            animation: grain 8s steps(10) infinite;
+        }
+
+        @keyframes grain {
+            0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-5%, -10%); }
+            20% { transform: translate(-15%, 5%); }
+            30% { transform: translate(7%, -25%); }
+            40% { transform: translate(-5%, 25%); }
+            50% { transform: translate(-15%, 10%); }
+            60% { transform: translate(15%, 0%); }
+            70% { transform: translate(0%, 15%); }
+            80% { transform: translate(3%, 35%); }
+            90% { transform: translate(-10%, 10%); }
+        }
+
+        /* Header/Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            z-index: 2;
+            background: 
+                radial-gradient(ellipse at top, rgba(255, 182, 193, 0.15), transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(139, 0, 0, 0.1), transparent 50%),
+                linear-gradient(180deg, #FFF8E7 0%, #F5E6D3 50%, #FFE4E1 100%);
+        }
+
+        /* Ornate vintage frame */
+        .hero-frame {
+            position: relative;
+            padding: 3rem;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .hero-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 3px double var(--gold);
+            border-radius: 30px;
+            box-shadow: 
+                inset 0 0 30px rgba(212, 175, 55, 0.1),
+                0 10px 40px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 248, 231, 0.6));
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-frame::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 1px solid rgba(199, 91, 122, 0.3);
+            border-radius: 35px;
+            pointer-events: none;
+        }
+
+        /* Corner ornaments */
+        .corner-ornament {
+            position: absolute;
+            font-size: 2.5rem;
+            color: var(--gold);
+            opacity: 0.6;
+            z-index: 1;
+            animation: gentleFloat 3s ease-in-out infinite;
+        }
+
+        .corner-ornament.top-left {
+            top: -10px;
+            left: -10px;
+            animation-delay: 0s;
+        }
+
+        .corner-ornament.top-right {
+            top: -10px;
+            right: -10px;
+            animation-delay: 0.75s;
+        }
+
+        .corner-ornament.bottom-left {
+            bottom: -10px;
+            left: -10px;
+            animation-delay: 1.5s;
+        }
+
+        .corner-ornament.bottom-right {
+            bottom: -10px;
+            right: -10px;
+            animation-delay: 2.25s;
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            50% {
+                transform: translate(3px, -3px) rotate(5deg);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            color: var(--deep-red);
+            margin-bottom: 0.5rem;
+            animation: fadeInDown 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            text-shadow: 
+                2px 2px 0px rgba(199, 91, 122, 0.1),
+                4px 4px 8px rgba(0, 0, 0, 0.05);
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            line-height: 1.2;
+        }
+
+        /* Elegant vintage underline */
+        .hero h1::after {
+            content: '';
+            display: block;
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 1rem auto;
+            animation: expandLine 1s ease-out 0.5s backwards;
+        }
+
+        @keyframes expandLine {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+            to {
+                width: 200px;
+                opacity: 1;
+            }
+        }
+
+        /* Remove old sparkle effect */
+        .hero h1::before {
+            display: none;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.3rem, 3.5vw, 2rem);
+            color: var(--rose);
+            margin-bottom: 2.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+            padding: 0;
+            position: relative;
+            font-style: italic;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+
+        /* Remove old decorations */
+        .hero .subtitle::before,
+        .hero .subtitle::after {
+            display: none;
+        }
+
+        .counter-box {
+            background: linear-gradient(135deg, #FFFFFF 0%, #FFF8E7 100%);
+            padding: 2.5rem 4rem;
+            border-radius: 20px;
+            box-shadow: 
+                0 15px 50px rgba(139, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            margin: 2rem 0 0 0;
+            animation: fadeInUp 1s ease-out 0.7s backwards;
+            position: relative;
+            border: 2px solid var(--beige);
+            overflow: visible;
+        }
+
+        /* Elegant top ornament */
+        .counter-box::before {
+            content: '⚜';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            color: var(--deep-red);
+            background: linear-gradient(135deg, #FFFFFF 0%, #FFF8E7 100%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--gold);
+            box-shadow: 
+                0 5px 20px rgba(139, 0, 0, 0.2),
+                inset 0 2px 5px rgba(255, 255, 255, 0.5);
+            animation: floatBadge 3s ease-in-out infinite;
+        }
+
+        @keyframes floatBadge {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-5px) rotate(5deg);
+            }
+        }
+
+        /* Decorative corner flourishes */
+        .counter-box::after {
+            content: '✦';
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            color: var(--soft-pink);
+            opacity: 0.4;
+            font-size: 1.5rem;
+        }
+
+        .counter-box h2 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--deep-red);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            position: relative;
+        }
+
+        .counter-box p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: var(--rose);
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Memory Cards Grid */
+        .memories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .memory-card {
+            background: linear-gradient(135deg, #F5E6D3 0%, #FFF8E7 100%);
+            border-radius: 3px;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+            overflow: visible;
+            height: 280px;
+        }
+
+        /* Envelope top flap */
+        .memory-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(135deg, #D4AF37 0%, #C9A961 50%, #D4AF37 100%);
+            clip-path: polygon(0 0, 0 70%, 50% 100%, 100% 70%, 100% 0);
+            border-bottom: 2px solid rgba(139, 0, 0, 0.2);
+            box-shadow: 
+                0 4px 8px rgba(0, 0, 0, 0.15),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        /* Wax seal on envelope */
+        .memory-card::after {
+            content: '❤';
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #8B0000 0%, #6B0000 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            z-index: 2;
+            box-shadow: 
+                0 5px 15px rgba(139, 0, 0, 0.5),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.3),
+                inset 0 2px 5px rgba(255, 255, 255, 0.2);
+            border: 3px solid rgba(139, 0, 0, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .memory-card.visible {
+            animation: polaroidDrop 0.6s ease-out forwards;
+        }
+
+        @keyframes polaroidDrop {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) rotate(-2deg);
+            }
+            60% {
+                transform: translateY(-5px) rotate(1deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        .memory-card:hover {
+            transform: translateY(-12px) rotate(-2deg);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border-color: var(--gold);
+        }
+
+        .memory-card:hover::before {
+            filter: brightness(1.1);
+            box-shadow: 
+                0 6px 12px rgba(0, 0, 0, 0.2),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        .memory-card:hover::after {
+            transform: translateX(-50%) scale(1.1) rotate(5deg);
+            box-shadow: 
+                0 8px 20px rgba(139, 0, 0, 0.6),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.4),
+                inset 0 2px 5px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Letter content area */
+        .memory-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 1.5rem 1.5rem;
+            background: linear-gradient(180deg, rgba(255, 248, 231, 0) 0%, rgba(255, 248, 231, 1) 20%);
+        }
+
+        .memory-card h3 {
+            font-size: 1.6rem;
+            color: var(--deep-red);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        .memory-icon {
+            font-size: 1.4rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        /* Vintage ribbon effect on hover */
+        .memory-card:hover .memory-icon {
+            animation: swing 0.6s ease-in-out;
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+
+        .memory-card p {
+            color: var(--rose);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            text-align: center;
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* Vintage postage stamp decoration */
+        .memory-stamp {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 45px;
+            height: 45px;
+            background: white;
+            border: 2px dashed var(--rose);
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transform: rotate(8deg);
+            transition: all 0.3s ease;
+        }
+
+        .memory-card:hover .memory-stamp {
+            transform: rotate(12deg) scale(1.05);
+        }
+
+        /* Modal/Popup */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        /* Wax seal that breaks open */
+        .wax-seal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #8B0000 0%, #6B0000 100%);
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: 
+                0 8px 25px rgba(139, 0, 0, 0.6),
+                inset 0 -3px 8px rgba(0, 0, 0, 0.3),
+                inset 0 3px 8px rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: sealBreak 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            opacity: 1;
+        }
+
+        .wax-seal::before {
+            content: '❤';
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .wax-seal::after {
+            content: '';
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border: 3px solid rgba(139, 0, 0, 0.3);
+            border-radius: 50%;
+            animation: ripple 0.8s ease-out forwards;
+        }
+
+        @keyframes sealBreak {
+            0% {
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            30% {
+                transform: translate(-50%, -50%) scale(1.1) rotate(5deg);
+            }
+            60% {
+                transform: translate(-50%, -50%) scale(0.95) rotate(-5deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Envelope that opens */
+        .envelope {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(135deg, #D4AF37 0%, #C9A961 100%);
+            clip-path: polygon(0 0, 50% 70%, 100% 0);
+            transform-origin: top center;
+            z-index: 5;
+            animation: flapOpen 0.8s ease-out 0.4s forwards;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-left: 2px solid rgba(139, 0, 0, 0.2);
+            border-right: 2px solid rgba(139, 0, 0, 0.2);
+        }
+
+        @keyframes flapOpen {
+            0% {
+                transform: rotateX(0deg);
+            }
+            100% {
+                transform: rotateX(-180deg);
+            }
+        }
+
+        /* Letter paper that slides out */
+        .modal-content {
+            background: linear-gradient(135deg, #FFF8E7 0%, #FFFAF0 100%);
+            padding: 3rem;
+            border-radius: 5px;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            animation: letterSlideOut 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s backwards;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transform-origin: center center;
+        }
+
+        @keyframes letterSlideOut {
+            0% {
+                opacity: 0;
+                transform: translateY(100px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Vintage paper texture overlay */
+        .modal-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(199, 91, 122, 0.03) 2px,
+                    rgba(199, 91, 122, 0.03) 3px
+                );
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        /* Letter header decoration */
+        .modal-content::after {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .modal-content h2 {
+            font-size: 2.5rem;
+            color: var(--deep-red);
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        /* Elegant letter underline */
+        .modal-content h2::after {
+            content: '';
+            display: block;
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--rose), transparent);
+            margin: 1rem auto 0;
+            opacity: 0.5;
+        }
+
+        .modal-content p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--dark-text);
+            text-align: left;
+            text-indent: 2rem;
+            margin-bottom: 1.2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        .modal-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--deep-red);
+            float: left;
+            line-height: 0.8;
+            margin: 0.1rem 0.5rem 0 0;
+            font-weight: 600;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--deep-red) 0%, var(--rose) 100%);
+            border: 3px solid var(--gold);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            box-shadow: 
+                0 5px 15px rgba(139, 0, 0, 0.4),
+                inset 0 1px 3px rgba(255, 255, 255, 0.3);
+            z-index: 10;
+        }
+
+        .close-btn:hover {
+            transform: rotate(45deg) scale(1.1);
+            box-shadow: 
+                0 8px 20px rgba(139, 0, 0, 0.6),
+                inset 0 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Scrollbar Styling */
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: var(--beige);
+            border-radius: 10px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: var(--rose);
+            border-radius: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 1.5rem;
+            }
+
+            .hero-frame {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero-frame::before {
+                border-radius: 20px;
+            }
+
+            .hero-frame::after {
+                top: -10px;
+                left: -10px;
+                right: -10px;
+                bottom: -10px;
+                border-radius: 25px;
+            }
+
+            .corner-ornament {
+                font-size: 1.8rem;
+            }
+
+            .hero h1::after {
+                width: 150px;
+            }
+
+            .counter-box {
+                padding: 2rem 2.5rem;
+            }
+
+            .counter-box::before {
+                font-size: 2rem;
+                width: 50px;
+                height: 50px;
+                top: -20px;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .memories-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .wax-seal {
+                width: 100px;
+                height: 100px;
+            }
+
+            .wax-seal::before {
+                font-size: 2.5rem;
+            }
+
+            .envelope-flap {
+                height: 150px;
+            }
+
+            .modal-content {
+                padding: 2.5rem 2rem;
+                margin: 1rem;
+            }
+
+            .modal-content h2 {
+                font-size: 2rem;
+            }
+
+            .modal-content p {
+                font-size: 1rem;
+            }
+
+            .modal-content p:first-of-type::first-letter {
+                font-size: 3rem;
+            }
+
+            .close-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-frame {
+                padding: 1.5rem 1rem;
+            }
+
+            .corner-ornament {
+                font-size: 1.5rem;
+            }
+
+            .hero h1::after {
+                width: 100px;
+            }
+
+            .counter-box {
+                padding: 1.5rem 2rem;
+            }
+
+            .memory-card {
+                padding: 0;
+                height: 260px;
+            }
+
+            .memory-card::before {
+                height: 90px;
+            }
+
+            .memory-card::after {
+                top: 60px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+
+            .memory-card-content {
+                padding: 1.8rem 1.2rem 1.2rem;
+            }
+
+            .memory-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .memory-stamp {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                top: 12px;
+                right: 12px;
+            }
+
+            .wax-seal {
+                width: 80px;
+                height: 80px;
+            }
+
+            .wax-seal::before {
+                font-size: 2rem;
+            }
+
+            .envelope-flap {
+                height: 120px;
+            }
+
+            .modal-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .modal-content h2 {
+                font-size: 1.7rem;
+            }
+
+            .modal-content p {
+                font-size: 0.95rem;
+                text-indent: 1.5rem;
+            }
+
+            .modal-content p:first-of-type::first-letter {
+                font-size: 2.5rem;
+            }
+
+            .close-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.3rem;
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts Container -->
+    <div class="heart-container" id="heartContainer"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-frame">
+            <div class="corner-ornament top-left">❦</div>
+            <div class="corner-ornament top-right">❦</div>
+            <div class="corner-ornament bottom-left">❦</div>
+            <div class="corner-ornament bottom-right">❦</div>
+            
+            <div class="hero-content">
+                <h1>Our Beautiful Recap</h1>
+                <p class="subtitle">To the love of my life</p>
+                
+                <div class="counter-box">
+                    <h2>5 Years Together</h2>
+                    <p>And counting every beautiful moment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="memories-grid">
+            <!-- Memory Card 1 -->
+            <div class="memory-card" data-memory="prelude">
+                <div class="memory-stamp">✉</div>
+                <div class="memory-card-content">
+                    <h3><span class="memory-icon">✨</span> The Prelude</h3>
+                    <p>Where our story quietly began...</p>
+                </div>
+            </div>
+
+            <!-- Memory Card 2 -->
+            <div class="memory-card" data-memory="firsttalk">
+                <div class="memory-stamp">✉</div>
+                <div class="memory-card-content">
+                    <h3><span class="memory-icon">💬</span> The Very First Talk</h3>
+                    <p>A simple question about books...</p>
+                </div>
+            </div>
+
+            <!-- Memory Card 3 -->
+            <div class="memory-card" data-memory="firstframe">
+                <div class="memory-stamp">✉</div>
+                <div class="memory-card-content">
+                    <h3><span class="memory-icon">📸</span> The First Frame</h3>
+                    <p>Our very first picture together...</p>
+                </div>
+            </div>
+
+            <!-- Memory Card 4 -->
+            <div class="memory-card" data-memory="proposal">
+                <div class="memory-stamp">✉</div>
+                <div class="memory-card-content">
+                    <h3><span class="memory-icon">💕</span> The Proposal</h3>
+                    <p>Three words that changed everything...</p>
+                </div>
+            </div>
+
+            <!-- Memory Card 5 -->
+            <div class="memory-card" data-memory="firstouting">
+                <div class="memory-stamp">✉</div>
+                <div class="memory-card-content">
+                    <h3><span class="memory-icon">🏍️</span> The First Outing</h3>
+                    <p>Wind in my hair, joy in my heart...</p>
+                </div>
+            </div>
+
+            <!-- Memory Card 6 -->
+            <div class="memory-card" data-memory="sweetrisk">
+                <div class="memory-stamp">✉</div>
+                <div class="memory-card-content">
+                    <h3><span class="memory-icon">🍫</span> The Sweetest Risk</h3>
+                    <p>Kinder Joy and a stolen kiss...</p>
+                </div>
+            </div>
+
+            <!-- Memory Card 7 -->
+            <div class="memory-card" data-memory="soundtrack">
+                <div class="memory-stamp">✉</div>
+                <div class="memory-card-content">
+                    <h3><span class="memory-icon">🎵</span> Our Soundtrack</h3>
+                    <p>The song that feels like us...</p>
+                </div>
+            </div>
+
+            <!-- Memory Card 8 -->
+            <div class="memory-card" data-memory="todolist">
+                <div class="memory-stamp">✉</div>
+                <div class="memory-card-content">
+                    <h3><span class="memory-icon">🌍</span> Our To-Do List</h3>
+                    <p>Dreams we'll chase together...</p>
+                </div>
+            </div>
+
+            <!-- Memory Card 9 -->
+            <div class="memory-card" data-memory="favorite">
+                <div class="memory-stamp">✉</div>
+                <div class="memory-card-content">
+                    <h3><span class="memory-icon">🛵</span> Favorite Activity</h3>
+                    <p>On the back of your bike...</p>
+                </div>
+            </div>
+
+            <!-- Memory Card 10 -->
+            <div class="memory-card" data-memory="wrapup">
+                <div class="memory-stamp">✉</div>
+                <div class="memory-card-content">
+                    <h3><span class="memory-icon">💌</span> The Wrap Up</h3>
+                    <p>A message from my heart...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="wax-seal" id="waxSeal"></div>
+        <div class="envelope">
+            <div class="envelope-flap"></div>
+            <div class="modal-content" id="modalContent">
+                <span class="close-btn" id="closeBtn">✕</span>
+                <h2 id="modalTitle"></h2>
+                <p id="modalText"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Memory Content Data
+        const memories = {
+            prelude: {
+                title: "The Prelude",
+                text: "Our story began in the most unexpected way. I remember going with my mom to see the vacant plot of land near your house to plan our future home. Your father was so kind and invited us inside, but you weren't there that day. Even though you were missing, I felt like I met a part of you anyway—I found a childhood photo of you with your sister. It was just a small glimpse of you, but it stayed with me. It felt like the universe was giving me a little preview of my future. Then, the next time I walked into your home, there you were. After seeing that picture, seeing you in person for the very first time felt like everything finally falling into place."
+            },
+            firsttalk: {
+                title: "The Very First Talk",
+                text: "The first time we actually spoke was so unexpected. Your sister asked me to go up to the terrace with her, and I noticed you following behind us. As we were walking up the stairs, you suddenly turned to me and asked, 'You're in the Computer Science group too, right? I have some books you can take.' I remember telling you I had already gotten them from my brother, but inside, my mind was racing. I couldn't help but wonder, 'Wait, why is he talking to me?' I didn't know then that this simple question about books was actually the start of our entire story."
+            },
+            firstframe: {
+                title: "The First Frame",
+                text: "Eventually, our small talks turned into long conversations, and we truly started to connect. I'll never forget the day you came to meet me while I was walking from school to the bus stand. Right there, standing casually in front of the 'Palamudhir Nilayam' shop, we asked, 'Should we take a selfie?' That simple, spontaneous moment became our very first picture together. It wasn't anything fancy, just us and a phone camera, but looking back, it was the start of a gallery full of memories."
+            },
+            proposal: {
+                title: "The Proposal",
+                text: "It started out as just a normal day and a perfectly normal phone call. We were lost in our usual casual conversation when, out of nowhere, you said those three words: 'I love you.' Time seemed to stop for a second. I was overwhelmed with shock and pure happiness all at once. But I didn't want to waste a single moment or overthink it—the very next second, I said 'I love you' right back. That simple, unexpected phone call was the exact moment our 'forever' journey truly began."
+            },
+            firstouting: {
+                title: "The First Outing",
+                text: "Our very first outing wasn't just us—we went out with Hari Kumar and Archana, but my world was focused entirely on you. I remember the pure joy of riding on the back of your bike, feeling the wind and laughing the whole way. We spent the day at Prozone Mall, just enjoying each other's company and making memories. When the time came for you to drop me off at home, I walked inside with a heart that felt both incredibly full and strangely heavy. I was so happy for the time we had, but I already missed you the moment you drove away."
+            },
+            sweetrisk: {
+                title: "The Sweetest Risk",
+                text: "While every single day with you is a memory I cherish, there is one moment that plays like a movie in my head. I still can't believe the risk you took—sneaking through the path behind my house just to see me. You showed up with my favorite Kinder Joy, turning a regular day into something extraordinary. And then, before I could even process how sweet you were, you gave me a kiss and ran away into the night. It was spontaneous, brave, and so incredibly 'us.' That moment will always hold a special, secret place in my heart."
+            },
+            soundtrack: {
+                title: "Our Soundtrack",
+                text: "Whenever the melody of 'Anbil Avan' from Vinnai Thaandi Varuvaaya plays, my heart immediately goes to you. It's one of my favorite romantic movies, but that song feels like it was written specifically for us. Honestly, I feel so connected to those lyrics that it's as if I composed and released the song myself just to tell the world how I feel about you. It's more than just music; it's the sound of my happiness when I'm with you."
+            },
+            todolist: {
+                title: "Our To-Do List",
+                text: "While the last five years have been a dream, I'm already looking forward to everything we haven't done yet. I want to pack our bags and explore the world with you, getting lost in foreign streets and discovering new cultures hand-in-hand. When we're home, I want us to create—to spend quiet afternoons making cute art and messy crafts together, just enjoying the peace of each other's company. And most of all, I want every single one of my birthdays to feel like a fairytale, knowing that the best gift I'll ever receive is simply having you standing right beside me, year after year."
+            },
+            favorite: {
+                title: "Favorite Activity",
+                text: "Of all the moments we share, my absolute favorite is being on the back of your bike. There's something so special about it—the world zips by, but I'm tucked right behind you, feeling completely safe and happy. I love the feeling of the wind on us, the long stretches of road, and how it feels like it's just the two of us against the world. Those quality moments on our drives are when I feel the most connected to you. Whether we're going somewhere specific or just wandering, as long as I'm on that bike with you, I'm exactly where I want to be."
+            },
+            wrapup: {
+                title: "My Dearest,",
+                text: "We've walked through so many memories on this page—from that first glimpse of you in a childhood photo to the 'I love you' that changed my life forever. Looking back at the past 5 years, I realize that every long bike ride, every shared song, and even that daring Kinder Joy surprise were just the beginning of our story.\n\nI am so incredibly grateful for you. You are my safe place, my favorite adventure, and my whole heart. Thank you for choosing me every single day for the last half-decade and for making me feel like the luckiest girl in the world.\n\nI love you more than words can say, and I'm never letting you go!\n\nForever yours ❤️"
+            }
+        };
+
+        // Modal functionality
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalText = document.getElementById('modalText');
+        const modalContent = document.getElementById('modalContent');
+        const closeBtn = document.getElementById('closeBtn');
+        const waxSeal = document.getElementById('waxSeal');
+        const memoryCards = document.querySelectorAll('.memory-card');
+
+        memoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const memoryKey = card.getAttribute('data-memory');
+                const memory = memories[memoryKey];
+                
+                // Reset animations
+                modal.classList.remove('active');
+                waxSeal.style.animation = 'none';
+                modalContent.style.animation = 'none';
+                
+                // Set content
+                modalTitle.textContent = memory.title;
+                modalText.textContent = memory.text;
+                
+                // Trigger modal with seal animation
+                setTimeout(() => {
+                    modal.classList.add('active');
+                    waxSeal.style.animation = 'sealBreak 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards';
+                    modalContent.style.animation = 'letterSlideOut 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s backwards';
+                }, 10);
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        // Floating Hearts and Rose Petals
+        const petals = ['🌹', '🥀', '🏵️'];
+        
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            
+            // Randomly choose between heart and petal
+            const isPetal = Math.random() > 0.6;
+            if (isPetal) {
+                heart.classList.add('petal');
+                heart.textContent = petals[Math.floor(Math.random() * petals.length)];
+            } else {
+                heart.textContent = '❤️';
+            }
+            
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.getElementById('heartContainer').appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, isPetal ? 10000 : 8000);
+        }
+
+        // Create hearts periodically
+        setInterval(createHeart, 800);
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe memory cards with staggered delays
+        memoryCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+            observer.observe(card);
+        });
+
+        // Trigger more hearts on scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (Math.abs(currentScroll - lastScroll) > 100) {
+                createHeart();
+                createHeart();
+                lastScroll = currentScroll;
+            }
+        });
+
+        // Initialize some hearts on load
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createHeart, i * 300);
+        }
+    </script>
+</body>
+</html>
